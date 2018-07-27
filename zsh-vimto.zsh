@@ -1,6 +1,7 @@
 # Vim mode
 bindkey -v
 export KEYTIMEOUT=1 # Don't take 0.4s to change modes
+
 function zle-keymap-select zle-line-init {
 	# If it's not tmux then can use normal sequences
 	if [[ -z "${TMUX}" ]]; then
@@ -19,11 +20,12 @@ function zle-keymap-select zle-line-init {
 	if [ $KEYMAP = vicmd ]; then
 		echo -ne $vicmd_seq
 		RPROMPT=$'%K{white} %F{black}NORMAL%f %k'
-	# Insert mode
 	else
+    # Insert mode
 		echo -ne $viins_seq
 		RPROMPT=""
 	fi
+
 	zle reset-prompt
 }
 
