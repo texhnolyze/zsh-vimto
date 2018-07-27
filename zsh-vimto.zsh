@@ -45,10 +45,7 @@ zle -N zle-line-init      # When a new line starts
 
 # Fix backspace not working after returning from cmd mode
 bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char 
-
-# Re-enable incremental search from emacs mode (it's useful)
-bindkey '^r' history-incremental-search-backward
+bindkey '^h' backward-delete-char
 
 # Need to initially clear RPROMPT for it to work on first prompt
 export RPROMPT=''
